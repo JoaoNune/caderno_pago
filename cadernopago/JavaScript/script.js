@@ -15,8 +15,8 @@ function validarSenha() {
         document.getElementById("confirmarSenha").setCustomValidity("As senhas não coincidem. Por favor, digite novamente.");
         return false; // Impede o envio do formulário
     } else {
-        document.getElementById("confirmarSenha").setCustomValidity(""); // Limpa a mensagem de validação
-        return true; // Permite o envio do formulário
+        document.getElementById("confirmarSenha").setCustomValidity("");
+        return true; 
     }
 }
 
@@ -47,10 +47,10 @@ function formatarDocumento(doc) {
         documento = documento.replace(/(\d{3})(\d)/, '$1.$2'); // Adiciona o segundo ponto no CPF
         documento = documento.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); // Adiciona o hífen no CPF
     } else {
-        documento = documento.replace(/^(\d{2})(\d)/, '$1.$2'); // Adiciona a primeira barra no CNPJ
-        documento = documento.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3'); // Adiciona o segundo ponto no CNPJ
-        documento = documento.replace(/\.(\d{3})(\d)/, '.$1/$2'); // Adiciona a barra após a terceira sequência de números no CNPJ
-        documento = documento.replace(/(\d{4})(\d)/, '$1-$2'); // Adiciona o hífen no CNPJ
+        documento = documento.replace(/^(\d{2})(\d)/, '$1.$2'); 
+        documento = documento.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3'); 
+        documento = documento.replace(/\.(\d{3})(\d)/, '.$1/$2');
+        documento = documento.replace(/(\d{4})(\d)/, '$1-$2'); 
     }
     return documento;
 }
