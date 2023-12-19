@@ -3,7 +3,7 @@ const tipoDocumento = document.querySelector("#tipoDocumento");
 
 document.getElementById("formulario").addEventListener("submit", function(event) {
     if (!validarSenha()) {
-        event.preventDefault(); // Impede o envio do formulário se a validação falhar
+        event.preventDefault(); 
     }
 });
 
@@ -13,7 +13,7 @@ function validarSenha() {
 
     if (senha !== confirmarSenha) {
         document.getElementById("confirmarSenha").setCustomValidity("As senhas não coincidem. Por favor, digite novamente.");
-        return false; // Impede o envio do formulário
+        return false; 
     } else {
         document.getElementById("confirmarSenha").setCustomValidity("");
         return true; 
@@ -43,9 +43,9 @@ numDocumento.addEventListener("keyup", (event) => {
 function formatarDocumento(doc) {
     let documento = doc.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
     if (documento.length <= 11) {
-        documento = documento.replace(/(\d{3})(\d)/, '$1.$2'); // Adiciona o primeiro ponto no CPF
-        documento = documento.replace(/(\d{3})(\d)/, '$1.$2'); // Adiciona o segundo ponto no CPF
-        documento = documento.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); // Adiciona o hífen no CPF
+        documento = documento.replace(/(\d{3})(\d)/, '$1.$2'); 
+        documento = documento.replace(/(\d{3})(\d)/, '$1.$2'); 
+        documento = documento.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); 
     } else {
         documento = documento.replace(/^(\d{2})(\d)/, '$1.$2'); 
         documento = documento.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3'); 
