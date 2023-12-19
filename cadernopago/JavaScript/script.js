@@ -1,3 +1,6 @@
+const numDocumento = document.querySelector("#documento");
+const tipoDocumento = document.querySelector("#tipoDocumento");
+
 document.getElementById("formulario").addEventListener("submit", function(event) {
     if (!validarSenha()) {
         event.preventDefault(); // Impede o envio do formulário se a validação falhar
@@ -16,3 +19,44 @@ function validarSenha() {
         return true; // Permite o envio do formulário
     }
 }
+
+function validarDocumento(doc) {
+    const padrao = /(^\d{3}\.\d{3}\.\d{3}\-\d{2}$)|(^\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}$)/
+    return padrao.test(doc)
+}
+
+numDocumento.addEventListener("keyup", (event) => {
+    let valido = validarDocumento(event.target.value);
+
+    if (valido) {
+        numDocumento.classList.remove("invalido");
+        numDocumento.classList.add("valido");
+        tipoDocumento.value = numDocumento.value.length === 14 ? "CPF":"CNPJ";
+    } else {
+        numDocumento.classList.remove("valido");
+        numDocumento.classList.add("invalido");
+        tipoDocumento.value = "Digite um documento válido.";
+    }
+
+})
+
+function formatarDocumento(doc) {
+    let documento = doc.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
+    if (documento.length <= 11) {
+        documento = documento.replace(/(\d{3})(\d)/, '$1.$2'); // Adiciona o primeiro ponto no CPF
+        documento = documento.replace(/(\d{3})(\d)/, '$1.$2'); // Adiciona o segundo ponto no CPF
+        documento = documento.replace(/(\d{3})(\d{1,2})$/, '$1-$2'); // Adiciona o hífen no CPF
+    } else {
+        documento = documento.replace(/^(\d{2})(\d)/, '$1.$2'); // Adiciona a primeira barra no CNPJ
+        documento = documento.replace(/^(\d{2})\.(\d{3})(\d)/, '$1.$2.$3'); // Adiciona o segundo ponto no CNPJ
+        documento = documento.replace(/\.(\d{3})(\d)/, '.$1/$2'); // Adiciona a barra após a terceira sequência de números no CNPJ
+        documento = documento.replace(/(\d{4})(\d)/, '$1-$2'); // Adiciona o hífen no CNPJ
+    }
+    return documento;
+}
+
+numDocumento.addEventListener("input", (event) => {
+    let valorAtual = event.target.value;
+    let novoValor = formatarDocumento(valorAtual);
+    event.target.value = novoValor;
+});
