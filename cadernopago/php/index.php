@@ -18,11 +18,11 @@ if (isset($_SESSION["usuario"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Comercial</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css"> <!-- Adicione o caminho correto para o seu arquivo de estilo -->
+    <link rel="stylesheet" type="text/css" href="css/style.css"> 
 </head>
 <body>
     <header>
-        <h1>Sistema Comercial</h1>
+        <h1>Caderno Pago</h1>
     </header>
 
     <nav>
@@ -36,12 +36,22 @@ if (isset($_SESSION["usuario"])) {
     </nav>
 
     <section>
-        <!-- Conteúdo da página aqui -->
+
     </section>
 
     <footer>
         <p>&copy; 2024 Guilherme</p>
     </footer>
+
+    <script>
+        document.getElementById("logoffLink").addEventListener("click", function(event) {
+            var confirmarLogoff = confirm("Tem certeza de que deseja fazer logoff?");
+            
+            if (!confirmarLogoff) {
+                event.preventDefault();
+            }
+        });
+    </script>
 </body>
 </html>
 
