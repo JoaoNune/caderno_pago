@@ -1,9 +1,5 @@
 <?php
 session_start();
-if (isset($_SESSION["usuario"])) {
-    header("Location: http://localhost/cadernopago/php/index.php");
-    die();
-}
 
 require_once 'conexao.php';
 
@@ -14,29 +10,38 @@ try {
         $email = $_POST["emailLogin"];
         $senha = $_POST["senhaLogin"];
 
-        $stmt = $conexao->prepare("SELECT id, senha FROM usuarios WHERE email = ? ");
+        // Consulta preparada para evitar injeção de SQL
+        $stmt = $conexao->prepare("SELECT id, senha FROM usuarios WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $stmt->bind_result($id, $hashSenha);
 
         if ($stmt->fetch()) {
             if (password_verify($senha, $hashSenha)) {
+                // Credenciais corretas, inicia a sessão
                 $_SESSION["usuario"] = $id;
                 header("Location: http://localhost/cadernopago/php/index.php");
             } else {
+                // Senha incorreta
+                $_SESSION["erro"] = "Senha incorreta. Por favor, tente novamente.";
                 header("Location: http://localhost/cadernopago/login.php");
             }
         } else {
-            header("Location: http://localhost/cadernopago/login.php");
+            // Usuário não encontrado
+            // Senha incorreta
+            $_SESSION["erro"] = "Senha incorreta. Por favor, tente novamente.";
+            // Adiciona um parâmetro de erro na URL
+            header("Location: http://localhost/cadernopago/login.php?erro=senha");
+
         }
 
         $stmt->close();
     }
 
     $conexao->close();
-    
 } catch (Exception $error) {
-    //echo "Erro ao conectar com o BD. $error";
+    // Em caso de erro, armazena a mensagem de erro na sessão
+    $_SESSION["erro"] = "Erro ao conectar com o banco de dados.";
     header("Location: http://localhost/cadernopago/login.php");
 }
 ?>
