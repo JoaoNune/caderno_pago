@@ -8,6 +8,21 @@ if (isset($_SESSION["usuario"])) {
     session_destroy();
 }
 
+$erro = isset($_GET['erro']) ? $_GET['erro'] : null;
+
+if ($erro === "conexao") {
+    $mensagemErro = "Erro ao conectar com o banco de dados.";
+} elseif ($erro === "senha") {
+    $mensagemErro = "Senha incorreta. Por favor, tente novamente.";
+} elseif ($erro === "usuario") {
+    $mensagemErro = "Usuário não encontrado. Verifique seu e-mail.";
+} else {
+    $mensagemErro = "";
+} 
+
+$mensagemErro = isset($_SESSION['erro']) ? $_SESSION['erro'] : "";
+unset($_SESSION['erro']); // Limpa a mensagem de erro para não exibi-la novamente
+
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +49,10 @@ if (isset($_SESSION["usuario"])) {
 
         <div class="cadastro-message">
             <p>Ainda não é cadastrado? <a href="cadastro.html">Cadastre-se aqui</a></p>
+        </div>
+
+        <div class="mensagem-erro">
+        <?php echo $mensagemErro; ?>
         </div>
     </div>
 </body>
