@@ -21,7 +21,7 @@ try{
         $stmt -> bind_param("ssssss", $nome, $email, $senha, $telefone, $tipoDocumento, $documento);
 
         if($stmt->execute()) {
-            echo "Dados salvos com sucesso.";
+            header("Location: http://localhost/cadernopago/php/index.php");
         } else {
             echo "Não foi possível salvar os dados.";
         }
