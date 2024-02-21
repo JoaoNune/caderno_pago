@@ -18,15 +18,18 @@ try{
         $stmt->bind_param("sssss", $nome, $divida, $cpf, $endereco, $telefone);
 
         if ($stmt->execute()) {
-            echo "Cliente adicionado com sucesso.";
+            header("Location: adicionar-cliente.php?status=sucesso");
         } else {
-            echo "Não foi possível adicionar o cliente.";
+            header("Location: adicionar-cliente.php?status=erro");
         }
-
         $stmt->close();
     }
+
     $conexao->close();
+    exit();
+
 } catch (Exception $error) {
     echo "Erro ao conectar com o BD. $error";
+    exit();
 }
 ?>
