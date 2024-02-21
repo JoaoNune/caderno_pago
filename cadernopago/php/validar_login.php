@@ -18,15 +18,15 @@ try {
         if ($stmt->fetch()) {
             if (password_verify($senha, $hashSenha)) {
                 $_SESSION["usuario"] = $id;
-                header("Location: http://localhost/cadernopago/php/index.php");
+                header("Location: ./php/index.php");
             } else {
                 $_SESSION["erro"] = "Senha incorreta. Por favor, tente novamente.";
-                header("Location: http://localhost/cadernopago/login.php");
+                header("Location: ./login.php");
             }
         } else {
             $_SESSION["erro"] = "Senha incorreta. Por favor, tente novamente.";
 
-            header("Location: http://localhost/cadernopago/login.php?erro=senha");
+            header("Location: ./login.php?erro=senha");
 
         }
 
@@ -36,6 +36,6 @@ try {
     $conexao->close();
 } catch (Exception $error) {
     $_SESSION["erro"] = "Erro ao conectar com o banco de dados.";
-    header("Location: http://localhost/cadernopago/login.php");
+    header("Location: ./login.php");
 }
 ?>

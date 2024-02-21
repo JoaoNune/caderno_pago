@@ -5,7 +5,7 @@ if (isset($_SESSION["usuario"])) {
     if (isset($_GET["logoff"])) {
         unset($_SESSION["usuario"]);
         session_destroy();
-        header("Location: http://localhost/cadernopago/login.php");
+        header("Location: ./login.php");
         exit();
     }
 
@@ -117,7 +117,7 @@ footer {
 <?php
 } else {
     session_destroy();
-    header("Location: http://localhost/cadernopago/login.php");
+    header("Location: ./login.php");
     die();
 }
 ?>

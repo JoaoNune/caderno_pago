@@ -11,6 +11,6 @@ if (isset($_SESSION["usuario"])) {
     echo '<br><a href="?logoff">Sair<a>';
 } else {
     session_destroy();
-    header("Location: http://localhost/cadernopago/login.php");
+    header("Location: ./login.php");
     die();
 }

@@ -6,7 +6,7 @@ try{
     $conexao = obterConexao();
 
     if (!isset($_SESSION["usuario"])) {
-        header("Location: http://localhost/cadernopago/login.php");
+        header("Location: ./login.php");
         exit();
     }
 
