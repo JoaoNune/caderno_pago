@@ -47,7 +47,6 @@
 <body>
     <section>
         <h2>Adicionar Novo Cliente</h2>
-
         <form action="processar-cliente.php" method="post">
             <label for="nome">Nome:</label>
             <input type="text" name="nome" required>
@@ -66,6 +65,39 @@
 
             <input type="submit" value="Adicionar Cliente">
         </form>
+
+        <?php
+        require_once 'conexao.php';
+        if (isset($_GET['status'])) {
+            if ($_GET['status'] == 'sucesso') {
+                echo "<p>Cliente adicionado com sucesso!</p>";
+            } elseif ($_GET['status'] == 'erro') {
+                echo "<p>Erro ao adicionar o cliente.</p>";
+            }
+        }
+        $conexao = obterConexao();
+        $query = "SELECT * FROM clientes";
+        $result = $conexao->query($query);
+
+        if ($result->num_rows > 0) {
+            echo "<h2>Lista de Clientes</h2>";
+            echo "<table border='1'>";
+            echo "<tr><th>Nome</th><th>Dívida</th><th>CPF</th><th>Endereço</th><th>Telefone</th></tr>";
+            while($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($row["nome"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["divida"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["cpf"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["endereco"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["telefone"]) . "</td>";
+                echo "</tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "Nenhum cliente cadastrado.";
+        }
+        $conexao->close();
+        ?>
     </section>
 </body>
 </html>
