@@ -86,7 +86,7 @@ footer {
 
     <nav>
         <ul>
-            <li><a href="#">Pesquisar</a></li>
+            <li><a href="pesquisar-cliente.php">Pesquisar</a></li>
             <li><a href="adicionar-cliente.php">Clientes</a></li>
             <li><a href="#" id="configuracoesLink">Configurações</a></li>
             <li><a href="#" id="filtrarLink">Filtrar</a></li>

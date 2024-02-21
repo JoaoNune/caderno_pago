@@ -2,7 +2,7 @@
 
 session_start();
 if (isset($_SESSION["usuario"])) {
-    header("Location: ./index.php");
+    header("Location: php/index.php");
     die();
 } else {
     session_destroy();

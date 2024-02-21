@@ -21,7 +21,7 @@ try{
         $stmt -> bind_param("ssssss", $nome, $email, $senha, $telefone, $tipoDocumento, $documento);
 
         if($stmt->execute()) {
-            header("Location: ././index.php");
+            header("Location: ../index.php");
         } else {
             echo "Não foi possível salvar os dados.";
         }
