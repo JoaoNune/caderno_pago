@@ -22,18 +22,18 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centraliza o conteúdo horizontalmente */
+            align-items: center;
         }
 
         .form-container h2, .list-container h2 {
-            width: 100%; /* Faz o título ocupar toda a largura do container */
-            text-align: center; /* Centraliza o texto */
-            margin-bottom: 20px; /* Espaço abaixo do título */
+            width: 100%; 
+            text-align: center; 
+            margin-bottom: 20px; 
         }
 
         form {
-            width: 100%; /* Ocupa a largura total do seu contêiner */
-            max-width: 500px; /* Limita a largura máxima do formulário */
+            width: 100%;
+            max-width: 500px; 
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
@@ -54,7 +54,7 @@
             margin-top: 5px;
             border-radius: 5px;
             border: 1px solid #ddd;
-            box-sizing: border-box; /* Garante que o padding não aumente a largura do campo */
+            box-sizing: border-box; 
         }
 
         input[type="text"] {
@@ -80,7 +80,6 @@
             box-shadow: 0 0 5px rgba(70, 130, 180, 0.5);
         }
 
-        /* Ajustes para mensagens de sucesso e erro */
         .success-message, .error-message {
             text-align: center;
             font-weight: bold;
