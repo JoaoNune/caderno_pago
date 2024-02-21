@@ -2,7 +2,7 @@
 
 session_start();
 if (isset($_SESSION["usuario"])) {
-    header("Location: http://localhost/cadernopago/php/index.php");
+    header("Location: ./index.php");
     die();
 } else {
     session_destroy();
