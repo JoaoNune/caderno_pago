@@ -36,7 +36,7 @@ unset($_SESSION['erro']); // Limpa a mensagem de erro para não exibi-la novamen
 <body>
     <div class="container">
         <div class="login-form">
-            <form action="php/validar_login.php" method="post" id="login">
+            <form action="./validar_login.php" method="post" id="login">
                 <label for="emailLogin">E-mail:</label>
                 <input type="email" name="emailLogin" id="emailLogin" required><br>
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD:cadernopago/cadastro.php
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -44,3 +45,51 @@
 
 <script src="JavaScript/script.js"></script>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="cadastro-form">
+            <form action="./cadastro.php" method="post" id="formulario" >
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" required><br>
+
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email" required><br>
+
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" id="senha" required><br>
+
+                <label for="confirmarSenha">Confirmar Senha:</label>
+                <input type="password" name="confirmarSenha" id="confirmarSenha" required><br>
+
+                <label for="tipoDocumento">CPF ou CNPJ:</label>
+                <input type="text" name="documento" id="documento">
+                <select name="tipoDocumento" id="tipoDdocumento">
+                    <option value="cpf">CPF</option>
+                    <option value="cnpj">CNPJ</option>
+                </select><br>
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" name="telefone" id="telefone" required>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+
+        <div class="login-message">
+            <p>Já é cadastrado?<a href="index.php">Faça login</a></p>
+        </div>
+    </div>
+</body>
+
+<script src="JavaScript/script.js"></script>
+</html>
+>>>>>>> 0ec0d0b0e44ee5bc2545a5a76ab94805d4f05f6d:cadernopago/cadastro.html
