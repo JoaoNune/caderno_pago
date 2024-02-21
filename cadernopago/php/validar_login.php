@@ -18,7 +18,7 @@ try {
         if ($stmt->fetch()) {
             if (password_verify($senha, $hashSenha)) {
                 $_SESSION["usuario"] = $id;
-                header("Location: ./php/index.php");
+                header("Location: ././index.php");
             } else {
                 $_SESSION["erro"] = "Senha incorreta. Por favor, tente novamente.";
                 header("Location: ./login.php");
