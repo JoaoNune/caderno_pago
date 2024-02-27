@@ -127,13 +127,16 @@ if (!isset($_SESSION["usuario"])) {
                     echo "<tr><th>Nome</th><th>Dívida</th><th>CPF</th><th>Endereço</th><th>Telefone</th></tr>";
                     while ($row = $resultado->fetch_assoc()) {
                         echo "<tr>
-                            <td>" . htmlspecialchars($row['nome']) . "</td>
-                            <td>" . htmlspecialchars($row['divida']) . "</td>
-                            <td>" . htmlspecialchars($row['cpf']) . "</td>
-                            <td>" . htmlspecialchars($row['endereco']) . "</td>
-                            <td>" . htmlspecialchars($row['telefone']) . "</td>
-                            <td><a href='remover-cliente.php?id=" . $row['id'] . "' onclick='return confirm(\"Tem certeza que deseja remover este cliente?\");'><i class='fas fa-trash'></i></a></td>
-                        </tr>";
+                                <td>" . htmlspecialchars($row['nome']) . "</td>
+                                <td>" . htmlspecialchars($row['divida']) . "</td>
+                                <td>" . htmlspecialchars($row['cpf']) . "</td>
+                                <td>" . htmlspecialchars($row['endereco']) . "</td>
+                                <td>" . htmlspecialchars($row['telefone']) . "</td>
+                                <td>
+                                    <a href='remover-cliente.php?id=" . $row['id'] . "' onclick='return confirm(\"Tem certeza que deseja remover este cliente?\");'><i class='fas fa-trash'></i></a>
+                                    <a href='editar-cliente.php?id=" . $row['id'] . " ' onclick=return confirm(\"Quer editar?\");'><i class='fas fa-pencil-alt'</i></a>
+                                </td>
+                            </tr>";
                     }
                     echo "</table>";
                 } else {
