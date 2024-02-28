@@ -35,21 +35,30 @@ unset($_SESSION['erro']); // Limpa a mensagem de erro para não exibi-la novamen
 </head>
 <body>
     <div class="container">
+        <div class="logo">
+            <img src="img/logo.png" alt="">
+        </div>
         <div class="login-form">
             <form action="./php/validar_login.php" method="post" id="login">
-                <label for="emailLogin">E-mail:</label>
-                <input type="email" name="emailLogin" id="emailLogin" required><br>
+                <label for="emailLogin">
+                    <span>E-mail:</span>
+                    <input type="email" name="emailLogin" id="emailLogin" required placeholder="exemplo@email.com">
+                </label>
 
-                <label for="senhaLogin">Senha:</label>
-                <input type="password" name="senhaLogin" id="senhaLogin" required><br>
+                <label for="senhaLogin">
+                    <span>Senha:</span>
+                    <input type="password" name="senhaLogin" id="senhaLogin" required placeholder="Informe sua senha">
+                </label>
+                
 
                 <button type="submit">Entrar</button>
             </form>
+            <div class="cadastro-message">
+                <p>Ainda não é cadastrado? <a href="cadastro.php">Cadastre-se aqui</a></p>
+            </div>
         </div>
 
-        <div class="cadastro-message">
-            <p>Ainda não é cadastrado? <a href="cadastro.php">Cadastre-se aqui</a></p>
-        </div>
+        
 
         <div class="mensagem-erro">
             <?php echo $mensagemErro; ?>
