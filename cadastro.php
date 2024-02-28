@@ -8,22 +8,35 @@
 </head>
 <body>
     <div class="container">
+        <div class="logo">
+            <img src="img/logo.png" alt="">
+        </div>
         <div class="cadastro-form">
             <form action="php/cadastro.php" method="post" id="formulario" >
-                <label for="nome">Nome:</label>
-                <input type="text" name="nome" id="nome" required><br>
+                <label for="nome">
+                    <span>Nome:</span>
+                    <input type="text" name="nome" id="nome" required><br>
+                </label>
 
-                <label for="email">E-mail:</label>
-                <input type="email" name="email" id="email" required><br>
+                <label for="email">
+                    <span>E-mail:</span>
+                    <input type="email" name="emailLogin" id="emailLogin" required placeholder="exemplo@email.com">
+                </label>
 
-                <label for="senha">Senha:</label>
-                <input type="password" name="senha" id="senha" required><br>
+                <label for="senha">
+                    <span>Senha:</span>
+                    <input type="password" name="senhaLogin" id="senhaLogin" required placeholder="Informe sua senha">
+                </label>
 
-                <label for="confirmarSenha">Confirmar Senha:</label>
-                <input type="password" name="confirmarSenha" id="confirmarSenha" required><br>
+                <label for="confirmarSenha">
+                    <span>Confirmar senha:></span>
+                    <input type="password" name="confirmarSenha" id="confirmarSenha" required>
+                </label>
 
-                <label for="tipoDocumento">CPF ou CNPJ:</label>
-                <input type="text" name="documento" id="documento">
+                <label for="tipoDocumento">
+                    <span>CPF ou CNPJ:</span>
+                    <input type="text" name="documento" id="documento">
+                </label>
                 <select name="tipoDocumento" id="tipoDdocumento">
                     <option value="cpf">CPF</option>
                     <option value="cnpj">CNPJ</option>
