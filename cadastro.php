@@ -35,7 +35,7 @@
 
                 <label for="tipoDocumento">
                     <span>CPF ou CNPJ:</span>
-                    <input type="text" name="documento" id="documento">
+                    <input type="text" name="documento" id="documento" maxlength="18">
                 </label>
                 <select name="tipoDocumento" id="tipoDdocumento">
                     <option value="cpf">CPF</option>

@@ -25,17 +25,18 @@ function validarDocumento(doc) {
     return padrao.test(doc)
 }
 
-numDocumento.addEventListener("keyup", (event) => {
+numDocumento.addEventListener("keydown", (event) => {
     let valido = validarDocumento(event.target.value);
 
     if (valido) {
         numDocumento.classList.remove("invalido");
         numDocumento.classList.add("valido");
-        tipoDocumento.value = numDocumento.value.length === 14 ? "CPF":"CNPJ";
+        //tipoDocumento.value = numDocumento.value.length === 14 ? "CPF":"CNPJ";
+        
     } else {
         numDocumento.classList.remove("valido");
         numDocumento.classList.add("invalido");
-        tipoDocumento.value = "Digite um documento válido.";
+        //tipoDocumento.value = "Digite um documento válido.";
     }
 
 })
