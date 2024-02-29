@@ -8,8 +8,8 @@ try{
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nome = $_POST["nome"];
-        $email = $_POST["email"];
-        $senha = password_hash($_POST["senha"], PASSWORD_DEFAULT);
+        $email = $_POST["emailLogin"];
+        $senha = password_hash($_POST["senhaLogin"], PASSWORD_DEFAULT);
         $telefone = $_POST["telefone"];
         $tipoDocumento = $_POST["tipoDocumento"];
         $documento = $_POST["documento"];
