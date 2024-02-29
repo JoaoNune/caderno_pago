@@ -13,16 +13,13 @@ try {
     if (isset($_GET['id']) && !empty($_GET['id'])) {
         $id = $_GET['id'];
 
-        // Verifique se o formulário de edição foi enviado
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Obtenha os novos dados do formulário
             $novoNome = $_POST['novoNome'];
             $novaDivida = $_POST['novaDivida'];
             $novoCpf = $_POST['novoCpf'];
             $novoEndereco = $_POST['novoEndereco'];
             $novoTelefone = $_POST['novoTelefone'];
 
-            // Prepare e execute a instrução UPDATE
             $stmt = $conexao->prepare("UPDATE clientes SET nome=?, divida=?, cpf=?, endereco=?, telefone=? WHERE id=?");
             $stmt->bind_param("sssssi", $novoNome, $novaDivida, $novoCpf, $novoEndereco, $novoTelefone, $id);
 
@@ -34,7 +31,6 @@ try {
 
             $stmt->close();
         } else {
-            // Se o formulário não foi enviado, exiba o formulário de edição
             $stmt = $conexao->prepare("SELECT * FROM clientes WHERE id = ?");
             $stmt->bind_param("i", $id);
             $stmt->execute();
@@ -44,7 +40,6 @@ try {
 
             $stmt->close();
 
-            // Exiba o formulário de edição
             echo "<h2>Editar Cliente</h2>";
             echo "<form method='post'>";
             echo "<label for='novoNome'>Novo Nome:</label>";
