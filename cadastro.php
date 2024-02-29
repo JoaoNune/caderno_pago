@@ -29,7 +29,7 @@
                 </label>
 
                 <label for="confirmarSenha">
-                    <span>Confirmar senha:></span>
+                    <span>Confirmar senha:</span>
                     <input type="password" name="confirmarSenha" id="confirmarSenha" required>
                 </label>
 
