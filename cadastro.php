@@ -40,10 +40,13 @@
                 <select name="tipoDocumento" id="tipoDdocumento">
                     <option value="cpf">CPF</option>
                     <option value="cnpj">CNPJ</option>
-                </select><br>
+                </select>
 
-                <label for="telefone">Telefone:</label>
-                <input type="tel" name="telefone" id="telefone" required>
+                <label for="telefone">
+                    <span>Telefone:</span>
+                    <input type="tel" name="telefone" id="telefone" required>
+                </label>
+                
 
                 <button type="submit">Cadastrar</button>
             </form>

@@ -39,6 +39,11 @@ unset($_SESSION['erro']); // Limpa a mensagem de erro para não exibi-la novamen
             <img src="img/logo.png" alt="">
         </div>
         <div class="login-form">
+            <?php
+                if (strlen($mensagemErro) > 0) {
+                    echo '<div class="mensagem-erro">'.$mensagemErro.'</div>';
+                }
+            ?>
             <form action="./php/validar_login.php" method="post" id="login">
                 <label for="emailLogin">
                     <span>E-mail:</span>
@@ -60,9 +65,7 @@ unset($_SESSION['erro']); // Limpa a mensagem de erro para não exibi-la novamen
 
         
 
-        <div class="mensagem-erro">
-            <?php echo $mensagemErro; ?>
-        </div>
+        
     </div>
 </body>
 

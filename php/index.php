@@ -3,9 +3,7 @@ session_start();
 
 if (isset($_SESSION["usuario"])) {
     if (isset($_GET["logoff"])) {
-        unset($_SESSION["usuario"]);
-        session_destroy();
-        header("Location: ./login.php");
+        header("Location: ../logoff.php");
         exit();
     }
 
@@ -117,7 +115,7 @@ footer {
 <?php
 } else {
     session_destroy();
-    header("Location: ./login.php");
+    header("Location: ../login.php");
     die();
 }
 ?>
