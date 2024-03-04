@@ -177,3 +177,12 @@ input.invalido:focus {
     color: #333;
     font-weight: 600;
 }
+
+.menu-principal ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-principal li {
+    list-style: none;
+}
