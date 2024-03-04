@@ -62,10 +62,6 @@ unset($_SESSION['erro']); // Limpa a mensagem de erro para não exibi-la novamen
                 <p>Ainda não é cadastrado? <a href="cadastro.php">Cadastre-se aqui</a></p>
             </div>
         </div>
-
-        
-
-        
     </div>
 </body>
 

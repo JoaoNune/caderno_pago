@@ -60,13 +60,11 @@
                     <input type="text" name="telefone" id="telefone" oninput="atualizarCampoTelefone()" maxlength="15" required>
                 </label>
                 
-
                 <button type="submit">Cadastrar</button>
             </form>
-        </div>
-
-        <div class="login-message">
-            <p>Já é cadastrado?<a href="index.php">Faça login</a></p>
+            <div class="login-message">
+                <p>Já é cadastrado?<a href="index.php">Faça login</a></p>
+            </div>
         </div>
     </div>
 </body>
