@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script>
+        function formatarTelefone(telefone) {
+            let telefoneFormatado = telefone.replace(/\D/g, ''); 
+            telefoneFormatado = telefoneFormatado.replace(/(\d{2})(\d{4,5})(\d{4})$/, '($1) $2-$3');
+
+            return telefoneFormatado;
+        }
+
+        function atualizarCampoTelefone() {
+            var campoTelefone = document.getElementById('telefone');
+            campoTelefone.value = formatarTelefone(campoTelefone.value);
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -44,7 +57,7 @@
 
                 <label for="telefone">
                     <span>Telefone:</span>
-                    <input type="tel" name="telefone" id="telefone" required>
+                    <input type="text" name="telefone" id="telefone" oninput="atualizarCampoTelefone()" maxlength="15" required>
                 </label>
                 
 
