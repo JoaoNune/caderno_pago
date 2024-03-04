@@ -186,3 +186,30 @@ input.invalido:focus {
 .menu-principal li {
     list-style: none;
 }
+
+#search-bar {
+    position: relative;
+}
+
+#search-bar button {
+    background: transparent;
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    padding: 0;
+}
+
+
+#search-bar label input {
+    border-radius: 32px;
+    border: 1px solid #fff;
+    background-color: #0049AD ;
+    color: #fff;
+    font-size: 1.2em;
+    outline: none;
+    padding: 16px 24px;
+}
+
+#search-bar label input::placeholder {
+    color: #fff;
+}

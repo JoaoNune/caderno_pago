@@ -19,12 +19,17 @@ if (isset($_SESSION["usuario"])) {
   </head>
   <body>
     <div class="container">
-      <header>
-        <h1>Caderno Pago</h1>
-      </header>
+        <div class="index-img">
+            <img src="../img/index.png" alt="">
+        </div>
+        <form id="search-bar" action="pesquisar-cliente.php">
+            <label for="search">
+                <input type="search" id="search" placeholder="Pesquisar">
+            </label>
+            <button type="submit"><img src="../img/search.png" alt=""></button>
+        </form>
       <nav class="menu-principal">
         <ul>
-          <li><a href="pesquisar-cliente.php">Pesquisar</a></li>
           <li><a href="adicionar-cliente.php">Clientes</a></li>
           <li>
             <a href="#" id="configuracoesLink">Configurações</a>
@@ -34,7 +39,7 @@ if (isset($_SESSION["usuario"])) {
         </ul>
       </nav>
     </div>
-
+    <!--<li><a href="pesquisar-cliente.php">Pesquisar</a></li>-->
     <footer>
       <p>&copy; 2024 Guilherme</p>
     </footer>

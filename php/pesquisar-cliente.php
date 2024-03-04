@@ -134,7 +134,7 @@ if (!isset($_SESSION["usuario"])) {
                                 <td>" . htmlspecialchars($row['telefone']) . "</td>
                                 <td>
                                     <a href='remover-cliente.php?id=" . $row['id'] . "' onclick='return confirm(\"Tem certeza que deseja remover este cliente?\");'><i class='fas fa-trash'></i></a>
-                                    <a href='editar-cliente.php?id=" . $row['id'] . " ' onclick=return confirm(\"Quer editar?\");'><i class='fas fa-pencil-alt'</i></a>
+                                    <a href='editar-cliente.php?id=" . $row['id'] . " ' onclick=return confirm(\"Quer editar?\");'><i class='fas fa-pencil'></i></a>
                                 </td>
                             </tr>";
                     }
