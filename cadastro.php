@@ -63,7 +63,7 @@
                 <button type="submit">Cadastrar</button>
             </form>
             <div class="login-message">
-                <p>Já é cadastrado?<a href="index.php">Faça login</a></p>
+                <p>Já é cadastrado?<a href="index.php"> Faça login</a></p>
             </div>
         </div>
     </div>
