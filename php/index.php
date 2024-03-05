@@ -32,21 +32,23 @@ if (isset($_SESSION["usuario"])) {
         <ul>
           <li>
             <a href="adicionar-cliente.php">
-              <img src="" alt="">
+              <img src="../img/pessoa.png" alt="">
               <span>Clientes</span>
             </a>
           </li>
           <li>
             <a href="#" id="configuracoesLink">
-              <img src="" alt="">  
+              <img src="../img/engrenagem.png" alt="">  
               <span>Configurações</span>
             </a>
             <a href="#" id="filtrarLink">
+              <img src="../img/filtro.png" alt="">
               <span>Filtrar</span>
             </a>
           </li>
           <li>
             <a href="?logoff" id="logoffLink">
+              <img src="../img/logout.png" alt="">
               <span>Logout</span>
             </a>
           </li>
