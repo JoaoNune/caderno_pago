@@ -221,7 +221,7 @@
                 echo "<tr><th>Nome</th><th>Dívida</th><th>CPF</th><th>Endereço</th><th>Telefone</th></tr>";
                 while($row = $result->fetch_assoc()) {
                     echo "<tr>";
-                    echo "<td>" . htmlspecialchars($row["nome"]) . "</td>";
+                    echo "<td><a href='detalhes-cliente.php?id=" . $row["id"] . "'>" . htmlspecialchars($row["nome"]) . "</a></td>";
                     echo "<td>" . htmlspecialchars($row["divida"]) . "</td>";
                     echo "<td>" . htmlspecialchars($row["cpf"]) . "</td>";
                     echo "<td>" . htmlspecialchars($row["endereco"]) . "</td>";
