@@ -21,7 +21,7 @@ if ($erro === "conexao") {
 } 
 
 $mensagemErro = isset($_SESSION['erro']) ? $_SESSION['erro'] : "";
-unset($_SESSION['erro']); // Limpa a mensagem de erro para não exibi-la novamente
+unset($_SESSION['erro']); //Limpa a mensagem de erro para não exibi-la novamente
 
 ?>
 
