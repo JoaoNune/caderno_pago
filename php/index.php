@@ -57,7 +57,7 @@ if (isset($_SESSION["usuario"])) {
     </div>
     <!--<li><a href="pesquisar-cliente.php">Pesquisar</a></li>-->
     <footer>
-      <p>&copy; 2024 Guilherme</p>
+      <p>&copy; 2024 Caderno Pago</p>
     </footer>
 
     <script>
