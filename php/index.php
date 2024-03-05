@@ -22,7 +22,7 @@ if (isset($_SESSION["usuario"])) {
         <div class="index-img">
             <img src="../img/index.png" alt="">
         </div>
-        <form id="search-bar" action="pesquisar-cliente.php">
+        <form id="search-bar" action="pesquisar-cliente.php" action="pesquisar-cliente.php" method="POST">
             <label for="search">
                 <input type="search" id="search" placeholder="Pesquisar">
             </label>
