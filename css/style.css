@@ -238,9 +238,6 @@ input.invalido:focus {
     padding: 0;
 }
 
-
-
-
 #search-bar label input {
     border-radius: 32px;
     border: 1px solid #fff;
@@ -253,4 +250,84 @@ input.invalido:focus {
 
 #search-bar label input::placeholder {
     color: #fff;
+}
+
+/* page cliente */
+
+.page-cliente aside {
+    /* display: none; */
+    border: 1px solid #fff ;
+    padding: 16px
+}
+
+.page-cliente {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+.page-cliente header {
+    width: 100%;
+}
+
+.page-cliente main, .page-cliente aside {
+    width: 45%;
+}
+
+.page-cliente .list-container ul {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #fff;
+    border-top: none;
+}
+
+.page-cliente .list-container ul li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    gap: 4px;
+    border-top: 1px solid #fff;
+}
+
+.page-cliente .list-container ul li span {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-transform: capitalize;
+    width: 100%;
+}
+
+.page-cliente .list-container ul li span strong {
+    display: block;
+}
+
+.page-cliente .list-container ul li span strong a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    display: block;
+    padding: 4px;
+}
+
+.page-cliente .list-container ul li span em {
+    font-style: normal;
+    display: block;
+    padding: 4px;
+    color: #e5e5e5;
+    font-size: 0.9em;
+}
+
+.page-cliente .list-container ul li i {
+    display: block;
+}
+
+.page-cliente .list-container ul li i a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+    display: block;
+    padding: 8px;
 }

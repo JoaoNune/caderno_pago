@@ -5,140 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Adicionar Clientes</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-
-        .container {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px; 
-        }
-
-        .form-container, .list-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .form-container h2, .list-container h2 {
-            width: 100%; 
-            text-align: center; 
-            margin-bottom: 20px; 
-        }
-
-        form {
-            width: 100%;
-            max-width: 500px; 
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        label {
-            font-weight: bold;
-            margin-top: 10px;
-            display: block;
-            color: #333;
-        }
-
-        input[type="text"],
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            box-sizing: border-box; 
-        }
-
-        input[type="text"] {
-            background-color: #f9f9f9;
-        }
-
-        input[type="submit"] {
-            background-color: #4682B4;
-            color: white;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #4169E1;
-        }
-
-        input[type="text"]:focus {
-            border-color: #4682B4;
-            outline: none;
-            box-shadow: 0 0 5px rgba(70, 130, 180, 0.5);
-        }
-
-        .success-message, .error-message {
-            text-align: center;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .success-message {
-            background-color: #4CAF50;
-        }
-
-        .error-message {
-            background-color: #f44336;
-        }
-
-
-        h2 {
-            color: #333;
-        }
-
-        table {
-            width: 100%;
-            margin-top: 20px;
-            border-collapse: collapse;
-        }
-
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-
-        th, td {
-            text-align: left;
-            padding: 8px;
-        }
-
-        th {
-            background-color: #4682B4;
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        .success-message, .error-message {
-            color: #fff;
-            padding: 10px;
-            margin: 20px 0;
-            border-radius: 5px;
-        }
-
-        .success-message {
-            background-color: #4CAF50;
-        }
-
-        .error-message {
-            background-color: #f44336;
-        }
-    </style>
+    <link rel="stylesheet" href="../css/style.css">
     <script>
         function formatarCPF(cpf) {
             let cpfFormatado = cpf.replace(/\D/g, '');
@@ -180,9 +47,15 @@
     </script>
 </head>
 <body>
-    <div class="container">
-        <div class="form-container">
-            <h2>Adicionar Novo Cliente</h2>
+    <div class="container page-cliente">
+        <header>
+            <h1>Título</h1>
+            <div>
+                <a href="">Novo Cliente</a>
+            </div>
+        </header>
+
+        <aside class="form-container">
             <form action="processar-cliente.php" method="post">
                 <label for="nome">Nome:</label>
                 <input type="text" name="nome" required>
@@ -201,8 +74,8 @@
 
                 <input type="submit" value="Adicionar Cliente">
             </form>
-        </div>
-        <div class="list-container">
+        </aside>
+        <main class="list-container">
             <?php
             require_once 'conexao.php';
             if (isset($_GET['status'])) {
@@ -217,22 +90,23 @@
             $result = $conexao->query($query);
 
               if ($result->num_rows > 0) {
-                echo "<h2>Lista de Clientes</h2>";
-                echo "<table border='1'>";
-                echo "<tr><th>Nome</th><th>CPF</th></tr>";
+                echo "<ul>";
                 while($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td><a href='detalhes-cliente.php?id=" . $row["id"] . "'>" . htmlspecialchars($row["nome"]) . "</a> <a href='editar-cliente.php?id=" . $row["id"] . "'><span class='oi oi-pencil'></span></a></td>";
-                    echo "<td>" . htmlspecialchars($row["cpf"]) . "</td>";
-                    echo "<td><a href='editar-cliente.php?id=" . $row['id'] . " ' onclick=return confirm(\"Quer editar?\");'><i class='fas fa-pencil'></i></a></td>";
+                    echo "<li>";
+                    echo "<span>";
+                    echo "<strong><a href='detalhes-cliente.php?id=" . $row["id"] . "'>" . htmlspecialchars($row["nome"]) . "</a></strong>";
+                    echo "<em>CPF: " . htmlspecialchars($row["cpf"]) . "</em>";
+                    echo "</span>";
+                    echo "<i><a href='editar-cliente.php?id=" . $row['id'] . " ' onclick=return confirm(\"Quer editar?\");'><i class='fas fa-pencil'></i></a></i>";
+                    echo "</li>";
                 }
-                echo "</table>";
+                echo "</ul>";
             } else {
                 echo "<p>Nenhum cliente cadastrado.</p>";
             }
             $conexao->close();
             ?>
-        </div>
+        </main>
     </div>
 </body>
 </html>
