@@ -30,12 +30,26 @@ if (isset($_SESSION["usuario"])) {
         </form>
       <nav class="menu-principal">
         <ul>
-          <li><a href="adicionar-cliente.php">Clientes</a></li>
           <li>
-            <a href="#" id="configuracoesLink">Configurações</a>
-            <a href="#" id="filtrarLink">Filtrar</a>
+            <a href="adicionar-cliente.php">
+              <img src="" alt="">
+              <span>Clientes</span>
+            </a>
           </li>
-          <li><a href="?logoff" id="logoffLink">Logoff</a></li>
+          <li>
+            <a href="#" id="configuracoesLink">
+              <img src="" alt="">  
+              <span>Configurações</span>
+            </a>
+            <a href="#" id="filtrarLink">
+              <span>Filtrar</span>
+            </a>
+          </li>
+          <li>
+            <a href="?logoff" id="logoffLink">
+              <span>Logout</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
