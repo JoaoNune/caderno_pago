@@ -18,7 +18,7 @@ if (isset($_SESSION["usuario"])) {
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container pagina-pesquisa">
         <div class="index-img">
             <img src="../img/index.png" alt="">
         </div>
@@ -36,7 +36,7 @@ if (isset($_SESSION["usuario"])) {
               <span>Clientes</span>
             </a>
           </li>
-          <li>
+          <li class="duas-colunas">
             <a href="#" id="configuracoesLink">
               <img src="../img/engrenagem.png" alt="">  
               <span>Configurações</span>

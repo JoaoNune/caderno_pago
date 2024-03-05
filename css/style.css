@@ -6,6 +6,7 @@
 body {
     font-family: Arial, sans-serif;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -30,7 +31,7 @@ body {
 .container {
     width: 100%;
     max-width: 960px; 
-    margin: 0 auto;
+    margin: 0 auto 32px;
 }
 .login-message {
     text-align: center;
@@ -178,13 +179,51 @@ input.invalido:focus {
     font-weight: 600;
 }
 
+.pagina-pesquisa {
+    max-width: 680px;
+}
+
 .menu-principal ul {
     display: flex;
     flex-direction: column;
+    gap: 16px;
 }
 
 .menu-principal li {
     list-style: none;
+}
+
+.menu-principal li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+    padding: 16px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    max-height: 140px;
+    gap: 16px;
+}
+
+.menu-principal li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-principal li.duas-colunas {
+    flex-direction: row;
+    display: flex;
+    gap: 16px;
+}
+
+.menu-principal li.duas-colunas a {
+   width: 50%;
+}
+
+.menu-principal li a img {
+    display: block;
 }
 
 #search-bar {
@@ -198,6 +237,8 @@ input.invalido:focus {
     right: 16px;
     padding: 0;
 }
+
+
 
 
 #search-bar label input {
