@@ -16,6 +16,9 @@ body {
     
 }
 
+input {
+    outline: none;
+}
 
 .logo {
     display: flex;
@@ -255,7 +258,6 @@ input.invalido:focus {
 /* page cliente */
 
 .page-cliente aside {
-    /* display: none; */
     border: 1px solid #fff ;
     padding: 16px
 }
@@ -269,6 +271,12 @@ input.invalido:focus {
 
 .page-cliente header {
     width: 100%;
+}
+
+.page-cliente .form-container label {
+    display: block;
+    margin-bottom: 8px;
+    color: #fff;
 }
 
 .page-cliente main, .page-cliente aside {
@@ -331,3 +339,34 @@ input.invalido:focus {
     display: block;
     padding: 8px;
 }
+
+.page-cliente .form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s ease-in-out;
+    background-color: #f9f9f9; 
+    color: #333; 
+}
+
+.page-cliente .form-container input:focus {
+    outline: none;
+    border-color: #3498db; 
+}
+
+.page-cliente .form-container input[type="submit"] {
+    background-color: #3498db; 
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 1em;
+}
+
+.page-cliente .form-container input[type="submit"]:hover {
+    background-color: #2980b9; 
+}
+
