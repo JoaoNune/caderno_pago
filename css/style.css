@@ -259,7 +259,7 @@ input.invalido:focus {
 
 .page-cliente aside {
     border: 1px solid #fff ;
-    padding: 16px
+    padding: 16px;
 }
 
 .page-cliente {
@@ -364,9 +364,93 @@ input.invalido:focus {
     border-radius: 4px;
     padding: 10px 15px;
     font-size: 1em;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .page-cliente .form-container input[type="submit"]:hover {
     background-color: #2980b9; 
 }
 
+.page-cliente #addNovoCliente {
+    display: none;
+    gap: 16px;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 24px;
+    padding: 8px 24px;
+    background-color: #3498db;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+.page-cliente button#addNovoCliente:hover {
+    background-color: #2980b9; 
+}
+
+
+.page-cliente #addNovoCliente img {
+    display: inline-block;
+    width: auto;
+    height: 24px;
+}
+
+.page-cliente header {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    color: #fff;
+}
+
+.page-cliente header h1 {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.page-cliente header h1 img {
+    display: inline-block;
+    width: auto;
+    height: 32px;
+}
+
+
+.page-cliente .mensagem-erro {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.page-cliente .mensagem-erro p {
+    padding: 16px;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.page-cliente .mensagem-erro p.erro {
+    background-color: rgb(167, 26, 26);
+}
+
+.page-cliente .mensagem-erro p.sucesso {
+    background-color: rgba(52, 163, 52, 0.384);
+}
+
+@media only screen and (max-width: 720px) {
+    body {
+        justify-content: unset;
+    }
+    .page-cliente {
+        margin: 0 auto;
+        padding: 24px;
+    }
+    .page-cliente #addNovoCliente {
+        display: flex;
+    }
+
+    .page-cliente aside {
+        display: none;
+    }
+
+    .page-cliente main, .page-cliente aside {
+        width:100%;
+    }
+  }

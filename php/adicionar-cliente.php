@@ -49,9 +49,15 @@
 <body>
     <div class="container page-cliente">
         <header>
-            <h1>Título</h1>
+            <h1>
+                <img src="../img/pessoa.png" alt="">
+                <span>Clientes</span>
+            </h1>
             <div>
-                <a href="">Novo Cliente</a>
+               <button id="addNovoCliente">
+                    <img src="../img/adicao.png" alt="">
+                    <span>Novo Cliente</span>
+               </button>
             </div>
         </header>
 
@@ -64,26 +70,28 @@
                 <input type="text" name="divida" id="divida" oninput="atualizarCampoDivida()" required>
 
                 <label for="cpf">CPF:</label>
-                <input type="text" name="cpf" id="cpf" oninput="atualizarCampoCPF()" maxlength="14">
+                <input type="text" name="cpf" id="cpf" oninput="atualizarCampoCPF()" maxlength="14" required>
 
                 <label for="endereco">Endereço:</label>
-                <input type="text" name="endereco">
+                <input type="text" name="endereco" required>
 
                 <label for="telefone">Telefone:</label>
-                <input type="text" name="telefone" id="telefone" oninput="atualizarCampoTelefone()" maxlength="15">
+                <input type="text" name="telefone" id="telefone" oninput="atualizarCampoTelefone()" maxlength="15" required>
 
-                <input type="submit" value="Adicionar Cliente">
+                <input type="submit" value="Adicionar Cliente" id="salvarCliente">
             </form>
         </aside>
         <main class="list-container">
             <?php
             require_once 'conexao.php';
             if (isset($_GET['status'])) {
+                echo '<div class="mensagem-erro">';
                 if ($_GET['status'] == 'sucesso') {
-                    echo "<p>Cliente adicionado com sucesso!</p>";
+                    echo '<p class="sucesso">Cliente adicionado com sucesso!</p>';
                 } elseif ($_GET['status'] == 'erro') {
-                    echo "<p>Erro ao adicionar o cliente.</p>";
+                    echo '<p class="erro">Erro ao adicionar o cliente.</p>';
                 }
+                echo '</div>';
             }
             $conexao = obterConexao();
             $query = "SELECT * FROM clientes";
@@ -108,5 +116,7 @@
             ?>
         </main>
     </div>
+
+    <script src="../JavaScript/addCliente.js"></script>
 </body>
 </html>
