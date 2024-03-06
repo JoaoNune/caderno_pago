@@ -6,45 +6,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Adicionar Clientes</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script>
-        function formatarCPF(cpf) {
-            let cpfFormatado = cpf.replace(/\D/g, '');
-            cpfFormatado = cpfFormatado.replace(/(\d{3})(\d)/, '$1.$2'); 
-            cpfFormatado = cpfFormatado.replace(/(\d{3})(\d)/, '$1.$2'); 
-            cpfFormatado = cpfFormatado.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
-
-            return cpfFormatado;
-        }
-
-        function atualizarCampoCPF() {
-            var campoCPF = document.getElementById('cpf');
-            campoCPF.value = formatarCPF(campoCPF.value);
-        }
-
-        function formatarDivida(divida) {
-            let dividaFormatada = divida.replace(/\D/g, '');
-            dividaFormatada = dividaFormatada.replace(/(\d{1,})(\d{2})$/, '$1.$2');
-
-            return dividaFormatada;
-        }
-
-        function atualizarCampoDivida() {
-            var campoDivida = document.getElementById('divida');
-            campoDivida.value = formatarDivida(campoDivida.value);
-        }
-
-        function formatarTelefone(telefone) {
-            let telefoneFormatado = telefone.replace(/\D/g, ''); 
-            telefoneFormatado = telefoneFormatado.replace(/(\d{2})(\d{4,5})(\d{4})$/, '($1) $2-$3');
-
-            return telefoneFormatado;
-        }
-
-        function atualizarCampoTelefone() {
-            var campoTelefone = document.getElementById('telefone');
-            campoTelefone.value = formatarTelefone(campoTelefone.value);
-        }
-    </script>
 </head>
 <body>
     <div class="container page-cliente">
@@ -58,6 +19,10 @@
                     <img src="../img/adicao.png" alt="">
                     <span>Novo Cliente</span>
                </button>
+               <button id="voltarInicio" onclick="window.location.href='index.php'">
+                    <img src="../img/voltar.png" alt="">
+                    <span>Voltar para Início</span>
+                </button>
             </div>
         </header>
 
@@ -104,6 +69,7 @@
                     echo "<span>";
                     echo "<strong><a href='detalhes-cliente.php?id=" . $row["id"] . "'>" . htmlspecialchars($row["nome"]) . "</a></strong>";
                     echo "<em>CPF: " . htmlspecialchars($row["cpf"]) . "</em>";
+                    echo "<em>Dívida: " . htmlspecialchars($row["divida"]) . "</em>";
                     echo "</span>";
                     echo "<i><a href='editar-cliente.php?id=" . $row['id'] . " ' onclick=return confirm(\"Quer editar?\");'><i class='fas fa-pencil'></i></a></i>";
                     echo "</li>";
@@ -118,5 +84,6 @@
     </div>
 
     <script src="../JavaScript/addCliente.js"></script>
+    <script src="../JavaScript/mascaras.js"></script>
 </body>
 </html>
