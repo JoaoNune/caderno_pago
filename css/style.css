@@ -201,14 +201,13 @@ input.invalido:focus {
     align-items: center;
     justify-content: center;
     border: 1px solid #fff;
-    padding: 16px;
+    padding: 8px 16px;
     text-decoration: none;
     color: #fff;
     font-weight: bold;
     text-align: center;
     border-radius: 8px;
     max-height: 140px;
-    gap: 16px;
 }
 
 .menu-principal li a:hover {
@@ -257,7 +256,13 @@ input.invalido:focus {
 
 /* page cliente */
 
-.page-cliente aside {
+#voltarInicio img {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
+
+.page-cliente aside form {
     border: 1px solid #fff ;
     padding: 16px;
 }
@@ -295,15 +300,13 @@ input.invalido:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px;
-    gap: 4px;
+    padding: 8px 16px;
     border-top: 1px solid #fff;
 }
 
 .page-cliente .list-container ul li span {
     display: flex;
     flex-direction: column;
-    gap: 8px;
     text-transform: capitalize;
     width: 100%;
 }
@@ -323,9 +326,9 @@ input.invalido:focus {
 .page-cliente .list-container ul li span em {
     font-style: normal;
     display: block;
-    padding: 4px;
+    padding: 2px 4px;
     color: #e5e5e5;
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 .page-cliente .list-container ul li i {
@@ -338,6 +341,10 @@ input.invalido:focus {
     font-size: 1.2em;
     display: block;
     padding: 8px;
+}
+
+.page-cliente .list-container p {
+    color: #fff;
 }
 
 .page-cliente .form-container input {
@@ -452,7 +459,24 @@ input.invalido:focus {
     background-color: #2980b9; 
 }
 
+.mostrar {
+    display: flex !important;
+}
+
+.ocultar {
+    display: none !important;
+}
+
+.page-cliente #addNovoCliente {
+    display: none;
+}
+
 @media only screen and (max-width: 720px) {
+    
+    .page-cliente #addNovoCliente {
+        display: flex;
+    }
+    
     body {
         justify-content: unset;
     }
