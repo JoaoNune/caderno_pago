@@ -1,32 +1,13 @@
-// mascaras.js
+function formatarDivida(divida) {
+    let dividaFormatada = divida.replace(/\D/g, '');
+    dividaFormatada = dividaFormatada.replace(/(\d{1,})(\d{2})$/, '$1.$2');
 
-document.addEventListener("DOMContentLoaded", function () {
-    var campoDivida = document.getElementById("divida");
-
-    campoDivida.addEventListener("input", atualizarCampoDivida);
-
-    var form = document.querySelector("form");
-    form.addEventListener("submit", function () {
-        campoDivida.value = parseFloat(campoDivida.value.replace(/\D/g, "")).toFixed(2);
-    });
-});
-
-function formatarDinheiroExibicao(valor) {
-    var numero = parseFloat(valor) / 100;
-    return numero.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-    });
+    return dividaFormatada;
 }
 
 function atualizarCampoDivida() {
     var campoDivida = document.getElementById('divida');
-    var valorDigitado = campoDivida.value.replace(/\D/g, "");
-
-    if (valorDigitado.length > 0) {
-        var valorFormatado = formatarDinheiroExibicao(valorDigitado);
-        campoDivida.value = valorFormatado;
-    }
+    campoDivida.value = formatarDivida(campoDivida.value);
 }
 
 function formatarCPF(cpf) {
