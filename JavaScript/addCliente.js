@@ -5,15 +5,14 @@ const formCliente = document.querySelector(".page-cliente aside");
 const listCliente = document.querySelector(".page-cliente main");
 
 
-addCliente.addEventListener ("click", ev => {
-    formCliente.style.display = "block";
-    listCliente.style.display = "none";
-    addCliente.style.display = "none";
-})
+addCliente.addEventListener("click", function(ev) {
+    formCliente.classList.add("mostrar");
+    formCliente.classList.remove("ocultar");
+    listCliente.classList.add("ocultar");
+});
 
-salvarCliente.addEventListener ("click", ev => {
-    formCliente.style.display = "none";
-    listCliente.style.display = "block";
-    addCliente.style.display = "flex";
-})
+salvarCliente.addEventListener("click", function(ev) {
+    formCliente.classList.add("ocultar");
+    listCliente.classList.remove("ocultar");
+});
 
